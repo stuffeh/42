@@ -1,0 +1,18 @@
+# Mac OSX files
+._*
+.DS*
+
+# CLion files
+.idea/
+CMakeLists.txt
+cmake-build-debug/
+
+# C files
+*.o
+*.out
+
+# git files
+.gitignore
+
+# Piscine stuff
+Piscine

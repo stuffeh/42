@@ -1,13 +1,16 @@
 NAME=libft.a
-SRC=srcs/
+
+SRC=./
+
 CLASSES=ft_strlen ft_putchar_fd ft_putchar
+
 HEADERS_FOLDER=includes
 
 all: $(NAME)
 
 $(NAME):
 	gcc -Wall -Wextra -Werror -I $(HEADERS_FOLDER) -c $(addprefix $(SRC),$(addsuffix .c, $(CLASSES)))
-	ar -rv $(NAME) $(addsuffix .o, $(CLASSES))
+	ar -rc $(NAME) $(addsuffix .o, $(CLASSES))
 	ranlib $(NAME)
 
 clean:

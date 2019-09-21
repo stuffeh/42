@@ -1,20 +1,19 @@
 NAME=libft.a
 SRC=srcs/
-CLASSES=ft_strlen ft_putchar
+CLASSES=ft_strlen ft_putchar_fd ft_putchar
 HEADERS_FOLDER=includes
 
-all: make_lib
+all: $(NAME)
 
-make_lib:
-	gcc -I $(HEADERS_FOLDER) -c $(addprefix $(SRC),$(addsuffix .c, $(CLASSES)))
+$(NAME):
+	gcc -Wall -Wextra -Werror -I $(HEADERS_FOLDER) -c $(addprefix $(SRC),$(addsuffix .c, $(CLASSES)))
 	ar -rv $(NAME) $(addsuffix .o, $(CLASSES))
 	ranlib $(NAME)
 
 clean:
-	rm $(addsuffix .o, $(CLASSES))
+	rm -f $(addsuffix .o, $(CLASSES))
 
 fclean: clean
-	rm -f $(addsuffix .o, $(CLASSES))
 	rm -f $(NAME)
 
 re: fclean all

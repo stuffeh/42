@@ -4,7 +4,7 @@ SRC=./
 
 CLASSES=ft_strlen ft_putchar_fd ft_putchar
 
-HEADERS_FOLDER=includes
+HEADERS_FOLDER=./includes
 
 all: $(NAME)
 

@@ -9,8 +9,9 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-size_t	ft_strlen(char *str);
 void	ft_putchar_fd(char c, int fd);
 void    ft_putchar(char c);
+void	ft_putstr(char const *s);
+size_t	ft_strlen(char *str);
 
 #endif

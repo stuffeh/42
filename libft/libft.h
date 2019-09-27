@@ -16,7 +16,6 @@
 # include <stdio.h>
 # include <string.h>
 
-
 typedef struct		s_list
 {
 	void			*content;
@@ -40,8 +39,8 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
 size_t				ft_strlen(char *str);
-char				*ft_strcpy(char * dst, const char * src);
-char 				*ft_strncpy(char *dst, const char *src, size_t len);
+char				*ft_strcpy(char *dst, const char *src);
+char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strtrim(char const *s);
 
 #endif

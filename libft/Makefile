@@ -32,6 +32,7 @@ CLASSES=ft_atoi \
 	ft_haswhitespace \
 	ft_strndup \
 	ft_strnlen \
+	ty_atoi
 
 HEADERS_FOLDER=./
 

@@ -19,8 +19,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	count;
 	char	*out;
 
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
+	i = 0;
+	j = 0;
+	if (s1)
+		i = ft_strlen(s1);
+	if (s2)
+		j = ft_strlen(s2);
 	count = 0;
 	if (!(out = ft_memalloc(i + j + 1)))
 		return (NULL);

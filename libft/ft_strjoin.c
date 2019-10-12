@@ -28,16 +28,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	count = 0;
 	if (!(out = ft_memalloc(i + j + 1)))
 		return (NULL);
-	while (count < i)
-	{
-		out[count] = s1[count];
-		count++;
-	}
+	while (count++ < i)
+		out[count - 1] = s1[count - 1];
 	count = 0;
-	while (count < j)
-	{
-		out[count + i] = s2[count];
-		count++;
-	}
+	while (count++ < j)
+		out[count + i - 1] = s2[count - 1];
 	return (out);
 }

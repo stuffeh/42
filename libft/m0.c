@@ -116,5 +116,10 @@ int	main(void)
 		write(1, dest, 15);
 		printf("\ndest:%s", dest);
 	}*/
+//Test for ft_strnstr.c
+/*//	char const hay[4] = "cba\0";
+//	char const need[4] = "abc\0";
+	printf("fts:%d\n", ft_strcmp("cba", "abc"));
+	printf("str:%d\n", strcmp("cba", "abc"));*/
 
 }

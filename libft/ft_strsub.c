@@ -19,7 +19,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	out = NULL;
-	if ((out = ft_memalloc(len + 1)) && s && *s)
+	if (s && *s && (out = ft_memalloc(len + 1)))
 	{
 		while (i < len)
 		{
@@ -29,3 +29,4 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		out[i] = '\0';
 	}
 	return (out);
+}

@@ -30,6 +30,7 @@ CLASSES=ft_atoi \
 	ft_strstr \
 	ft_tolower \
 	ft_toupper \
+	ft_itoa \
 	ft_memalloc \
 	ft_memdel \
 	ft_putchar \
@@ -43,11 +44,23 @@ CLASSES=ft_atoi \
 	ft_strclr \
 	ft_strdel \
 	ft_strequ \
+	ft_striter \
+	ft_striteri \
 	ft_strjoin \
+	ft_strmap \
+	ft_strmapi \
 	ft_strnequ \
 	ft_strnew \
+	ft_strsplit \
 	ft_strsub \
-	ft_haswhitespace \
+	ft_strtrim \
+	ft_lstadd \
+	ft_lstdel \
+	ft_lstdelone \
+	ft_lstiter \
+	ft_lstmap \
+	ft_lstnew \
+	ty_haswhitespace \
 	ft_strndup \
 	ft_strnlen \
 	ty_atoi \
@@ -61,6 +74,7 @@ $(NAME):
 	gcc -Wall -Wextra -Werror -I $(HEADERS_FOLDER) -c $(addprefix $(SRC),$(addsuffix .c, $(CLASSES)))
 	ar -rv $(NAME) $(addsuffix .o, $(CLASSES))
 	ranlib $(NAME)
+	gcc libft.a m1.c
 
 clean:
 	rm -f $(addsuffix .o, $(CLASSES))

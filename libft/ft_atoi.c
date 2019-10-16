@@ -17,7 +17,7 @@ int	ft_atoi(const char *str)
 	int		ispos;
 
 	ispos = 1;
-	while (ft_haswhitespace(*str) == 1)
+	while (ty_haswhitespace(*str) == 1)
 		str++;
 	if ((str[0] == '+' || (str[0] == '-')) && (ft_isdigit(str[1])))
 	{

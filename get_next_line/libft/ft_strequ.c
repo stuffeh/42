@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 19:26:33 by tyeung            #+#    #+#             */
-/*   Updated: 2019/09/30 19:26:35 by tyeung           ###   ########.fr       */
+/*   Created: 2019/10/11 23:54:07 by tyeung            #+#    #+#             */
+/*   Updated: 2019/10/11 23:54:08 by tyeung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	return (ty_strndup(s1, ft_strlen(s1)));
+	if (!s1 || !s2)
+		return (s1 == s2 ? 1 : 0);
+	while (ty_charcomp(*s1, *s2))
+	{
+		if ((!(*s1)) && (!(*s2)))
+		{
+			return (1);
+		}
+		s1++;
+		s2++;
+	}
+	return (0);
 }

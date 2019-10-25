@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnlen.c                                       :+:      :+:    :+:   */
+/*   ty_charcomp.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 19:58:56 by tyeung            #+#    #+#             */
-/*   Updated: 2019/09/30 19:58:59 by tyeung           ###   ########.fr       */
+/*   Created: 2019/10/11 23:45:42 by tyeung            #+#    #+#             */
+/*   Updated: 2019/10/11 23:45:44 by tyeung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-size_t	ft_strnlen(char const *str, size_t n)
+int	ty_charcomp(char c, char d)
 {
-	if (ft_strlen(str) <= n)
-		return (ft_strlen(str));
-	return (n);
+	if (c == d)
+	{
+		return (1);
+	}
+	return (0);
 }

@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 19:26:33 by tyeung            #+#    #+#             */
-/*   Updated: 2019/09/30 19:26:35 by tyeung           ###   ########.fr       */
+/*   Created: 2019/09/30 19:57:39 by tyeung            #+#    #+#             */
+/*   Updated: 2019/09/30 20:01:28 by tyeung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	return (ty_strndup(s1, ft_strlen(s1)));
+	size_t i;
+
+	i = 0;
+	if (n == 0)
+	{
+		return (0);
+	}
+	while (s1 && s2 && s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
+	{
+		i++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

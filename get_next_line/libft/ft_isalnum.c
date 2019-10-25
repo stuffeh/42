@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 19:26:33 by tyeung            #+#    #+#             */
-/*   Updated: 2019/09/30 19:26:35 by tyeung           ###   ########.fr       */
+/*   Created: 2019/09/26 16:44:46 by tyeung            #+#    #+#             */
+/*   Updated: 2019/09/26 16:44:50 by tyeung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int	ft_isalnum(int c)
 {
-	return (ty_strndup(s1, ft_strlen(s1)));
+	if (ft_isalpha(c) || ft_isdigit(c))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }

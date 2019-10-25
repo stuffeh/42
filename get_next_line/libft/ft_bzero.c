@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 19:26:33 by tyeung            #+#    #+#             */
-/*   Updated: 2019/09/30 19:26:35 by tyeung           ###   ########.fr       */
+/*   Created: 2019/09/23 21:47:37 by tyeung            #+#    #+#             */
+/*   Updated: 2019/09/23 21:48:38 by tyeung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+void	ft_bzero(void *out, size_t size)
 {
-	return (ty_strndup(s1, ft_strlen(s1)));
+	char	*tmp;
+	size_t	i;
+
+	tmp = out;
+	i = 0;
+	while (i != size)
+	{
+		tmp[i] = 0;
+		i++;
+	}
 }

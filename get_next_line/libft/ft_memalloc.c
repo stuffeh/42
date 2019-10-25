@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 19:26:33 by tyeung            #+#    #+#             */
-/*   Updated: 2019/09/30 19:26:35 by tyeung           ###   ########.fr       */
+/*   Created: 2019/09/23 21:53:36 by tyeung            #+#    #+#             */
+/*   Updated: 2019/09/23 21:53:43 by tyeung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	*ft_memalloc(size_t size)
 {
-	return (ty_strndup(s1, ft_strlen(s1)));
+	void	*out;
+
+	if (!(out = malloc(size)))
+	{
+		return (NULL);
+	}
+	ft_bzero(out, size);
+	return (out);
 }

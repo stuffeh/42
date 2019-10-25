@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 19:26:33 by tyeung            #+#    #+#             */
-/*   Updated: 2019/09/30 19:26:35 by tyeung           ###   ########.fr       */
+/*   Created: 2019/10/11 23:55:14 by tyeung            #+#    #+#             */
+/*   Updated: 2019/10/11 23:55:16 by tyeung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	return (ty_strndup(s1, ft_strlen(s1)));
+	if (dst || src)
+	{
+		while (n > 0)
+		{
+			n--;
+			((unsigned char *)dst)[n] = ((unsigned char *)src)[n];
+		}
+	}
+	return (dst);
 }

@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/30 19:59:22 by tyeung            #+#    #+#             */
-/*   Updated: 2019/09/30 19:59:24 by tyeung           ###   ########.fr       */
+/*   Created: 2019/10/11 23:54:16 by tyeung            #+#    #+#             */
+/*   Updated: 2019/10/11 23:54:22 by tyeung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *s1, size_t n)
+void	ft_strdel(char **as)
 {
-	char	*out;
-	size_t	len;
-
-	if (!(out = (char*)ft_memalloc(sizeof(char) * (n + 1))))
-	{
-		return (NULL);
-	}
-	len = 0;
-	while (s1[len] && len < n)
-	{
-		out[len] = (char)s1[len];
-		len++;
-	}
-	out[len] = '\0';
-	return (out);
+	if (as && *as)
+		ft_memdel((void **)as);
 }

@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 18:58:23 by tyeung            #+#    #+#             */
-/*   Updated: 2019/10/16 18:58:26 by tyeung           ###   ########.fr       */
+/*   Created: 2019/10/11 23:51:04 by tyeung            #+#    #+#             */
+/*   Updated: 2019/10/11 23:51:52 by tyeung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	words;
-	size_t	i;
-	char	**out;
-	char	*ss;
+	size_t i;
+	size_t j;
 
-	out = NULL;
-	if (!c || !s || !(ss = ft_strdup(s)))
-		return (out);
 	i = 0;
-	words = ty_charsearch(ss, c);
-	if ((out = (char **)ft_memalloc(sizeof(char *) * (words + 1))))
+	if (!*needle)
+		return ((char *)haystack);
+	while (haystack[i] != '\0' && i < len)
 	{
-		while (i < words)
-			out[i++] = ty_returnword(ss, c);
+		j = 0;
+		while (ty_charcomp(haystack[i + j], needle[j]) && (i + j < len))
+		{
+			if (needle[j + 1] == '\0')
+			{
+				while (i > 0)
+				{
+					haystack++;
+					i--;
+				}
+				return ((char *)haystack);
+			}
+			j++;
+		}
+		i++;
 	}
-	return (out);
+	return (NULL);
 }

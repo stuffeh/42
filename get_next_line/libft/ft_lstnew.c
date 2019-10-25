@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeung <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 18:58:23 by tyeung            #+#    #+#             */
-/*   Updated: 2019/10/16 18:58:26 by tyeung           ###   ########.fr       */
+/*   Created: 2019/10/16 19:01:24 by tyeung            #+#    #+#             */
+/*   Updated: 2019/10/16 19:01:25 by tyeung           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t	words;
-	size_t	i;
-	char	**out;
-	char	*ss;
+	t_list *out;
 
-	out = NULL;
-	if (!c || !s || !(ss = ft_strdup(s)))
-		return (out);
-	i = 0;
-	words = ty_charsearch(ss, c);
-	if ((out = (char **)ft_memalloc(sizeof(char *) * (words + 1))))
+	if ((out = (t_list *)ft_memalloc(sizeof(t_list))))
 	{
-		while (i < words)
-			out[i++] = ty_returnword(ss, c);
+		if (content)
+		{
+			out->content = ft_memalloc(content_size);
+			if (out->content)
+				ft_memcpy(out->content, content, content_size);
+			else
+			{
+				ft_memdel((void **)&out);
+				return (out);
+			}
+		}
+		else
+		{
+			content_size = 0;
+			out->content = NULL;
+		}
+		out->content_size = content_size;
+		out->next = NULL;
 	}
 	return (out);
 }
